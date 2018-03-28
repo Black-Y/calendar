@@ -1,0 +1,190 @@
+html{
+	font-family: "方正兰亭细黑_GBK";
+	background-color: #eee;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+#calendarBox{
+	position: relative;
+	margin: 0 auto;
+	width: 440px;
+	border-radius: 3px;
+	overflow: hidden;
+	text-align: center;
+	background-color: rgba(160,189,218,.4);
+}
+@media screen and (max-width: 488px) {
+	#calendarBox{
+		margin: 0;
+		width: 100%;
+	}
+}
+#calendarBox > div{
+	width: 100%;
+}
+#fancybox-frame{ 
+	width: 200px;
+	text-align: center;
+	height: 60px;
+}
+#year{
+	height: 70px;
+	line-height: 70px;
+	font-size: 40px;
+	color: rgba(0,0,0,.5);
+	background-color: rgba(160,189,218,.4);
+}
+div.secDiv{
+	background-color: rgba(84,125,130,.3);
+}
+.monPanel > div{
+	display: inline-block;
+	width: 30%;
+	margin: 0;
+	padding: 0;
+}
+.prev, .next{
+	font-size: 40px;
+	color: #fff;
+}
+#prevBtn, #nextBtn{
+	/*display: none;*/
+	visibility: hidden;
+	cursor: pointer;
+	transition: all .2s ease;
+}
+#prevBtn:hover{
+	color: orangered;
+}
+#nextBtn:hover{
+	color: orangered;
+}
+#mon{
+	font-size: 40px;
+	height: 80px;
+	line-height: 80px;
+	color: #fff;
+}
+ul#weekdays li{
+	font-size: 18px;
+	font-weight: bold;
+}
+ul{
+	width: 100%;
+	padding: 0 1%;
+	margin: 0;
+}
+ul li{
+	list-style-type: none;
+	float: left;
+	width: 12%;
+	margin: 0 1%;
+	font-size: 16px;
+	color: #fff;
+}
+#trdDiv ul{
+	padding-top: 1%;
+}
+#trdDiv ul li{
+	margin: 1% 1%;
+	font-size: 24px;
+}
+#trdDiv{
+	/*height: 0;
+	overflow: hidden;*/
+	display: none;
+	background: -webkit-linear-gradient(left bottom, rgba(12,72,156,.5) , rgba(179,160,196,.3)); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(top right, rgba(12,72,156,.5), rgba(179,160,196,.3)); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(top right, rgba(12,72,156,.5), rgba(179,160,196,.3)); /* Firefox 3.5 - 15 */
+	background: linear-gradient(to top right, rgba(12,72,156,.5) , rgba(179,160,196,.3)); /* 标准的语法 */
+}
+.lastDiv{
+	height: 50px;
+	background-color: rgba(30,100,93,.2);
+	color: #fff;
+	font-size: 22px;
+	text-indent: left;
+}
+.lastDiv > span{
+	display: inline-block;
+	width: 33.33%;
+	height: 50px;
+	line-height: 50px;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+span#timer{
+	font-family: "微软雅黑";
+	font-size: 17px;
+	text-indent: 1%;
+}
+.ctrlBtn{
+	text-align: left;
+}
+#day{
+	display: inline-block;
+	font-size: 18px;
+	vertical-align: middle;
+}
+#ctrlBtn{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	height: 18px;
+	line-height: 20px;
+	width: 18px;
+	margin-left: 39%;
+	font-size: 20px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	text-align: center;
+	cursor: pointer;
+	transform: rotate(90deg);
+}
+#ctrlBtn::before{
+	position: absolute;
+	content: "-";
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transform-origin: -8% 38%;
+	transform: rotate(-90deg);
+}
+.listOn{
+	animation: show .5s ease-in-out forwards;
+}
+.listOff{
+	animation: hide .5s ease-in-out forwards;
+}
+@keyframes show{
+	from{height: 0;}
+	to{height: 100%;}
+}
+@keyframes hide{
+	0%{height: 100%;}
+	100%{height: 0;}
+}
+.rotAdd{
+	animation: addon .3s .5s ease-in-out forwards;
+}
+.rotReduce{
+	animation: reduce .3s .5s ease-in-out forwards;
+}
+@keyframes addon{
+	0%{transform: rotate(-90deg);}
+	100%{transform: rotate(90deg);}
+}
+@keyframes reduce{
+	0%{transform: rotate(90deg);}
+	100%{transform: rotate(-90deg);}
+}
+.isDay{
+	border-radius: 50%;
+	background-color: #62a66a;
+	box-shadow: 0 0 6px #eee;
+}
+.isWeekday{
+	color: #f92e33;
+}
